@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RhapsodyArchive>
+	<MagicNumber></MagicNumber>
+	<CODE-PAGE>936</CODE-PAGE>
+	<version>100.840.0</version>
+	<lang>C++</lang>
+	<BuildNo>9841247</BuildNo>
+	
+	<RHAPSODY-MODEL>
+	<IComponent type="e">
+			<_id type="a">GUID e0a41c69-b24e-4d63-b7f8-59a2749b2fd0</_id>
+			<_myState type="a">139264</_myState>
+			<_name type="a">TestComponent</_name>
+			<_modifiedTimeWeak type="a">12.15.2019::9:23:26</_modifiedTimeWeak>
+			<_description type="p"><IDescription type="e">
+				<_text type="a">{\rtf1\ansi\ansicpg936\deff0\deflang1033\deflangfe2052{\fonttbl{\f0\fnil\fcharset0 Arial;}}%0D
+\viewkind4\uc1\pard\lang2052\fs20\par%0D
+}%0D
+</_text>
+			</IDescription>
+			</_description>
+			<_modifiedTime type="a">12.15.2019::9:23:26</_modifiedTime>
+			<m_buildType type="a">Executable</m_buildType>
+			<m_configActive type="r">
+				<ICodeGenConfigInfoHandle type="e">
+					<_hm2Class type="a">ICodeGenConfigInfo</_hm2Class>
+					<_hid type="a">GUID 497113eb-e50a-4be6-953c-f2ee3714e8eb</_hid>
+				</ICodeGenConfigInfoHandle>
+			</m_configActive>
+			<HandlesInMe type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">1</size>
+					
+						<IHandle type="e">
+							<_hm2Class type="a">ISubsystem</_hm2Class>
+							<_hfilename type="a">.\test.sbsx</_hfilename>
+							<_hname type="a">test</_hname>
+							<_hid type="a">GUID 23871656-a2cf-48e8-9692-0c0ab0a999d5</_hid>
+						</IHandle>
+					
+				</IRPYRawContainer>
+			</HandlesInMe>
+			<VariationPoints type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</VariationPoints>
+			<SelectedVariants type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</SelectedVariants>
+			<weakCGTime type="a">12.15.2019::9:23:26</weakCGTime>
+			<strongCGTime type="a">12.15.2019::9:23:26</strongCGTime>
+			<AggregatesList type="e">
+				<value>GUID 632226fb-6bdd-46d3-8f79-b2909a2ae9ba</value>
+				<value>GUID 497113eb-e50a-4be6-953c-f2ee3714e8eb</value>
+			</AggregatesList>
+		</IComponent>
+		<IFolder type="e">
+			<_id type="a">GUID 632226fb-6bdd-46d3-8f79-b2909a2ae9ba</_id>
+			<_myState type="a">8192</_myState>
+			<_name type="a">Files</_name>
+			<_modifiedTimeWeak type="a">12.15.2019::9:23:26</_modifiedTimeWeak>
+			<_modifiedTime type="a">12.15.2019::9:23:26</_modifiedTime>
+			<m_path type="a">../../untitled</m_path>
+			<Elements type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</Elements>
+			<Files type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</Files>
+		</IFolder>
+		<ICodeGenConfigInfo type="e">
+			<_id type="a">GUID 497113eb-e50a-4be6-953c-f2ee3714e8eb</_id>
+			<_myState type="a">8192</_myState>
+			<_name type="a">TestConfig</_name>
+			<_modifiedTimeWeak type="a">12.15.2019::9:20:39</_modifiedTimeWeak>
+			<_description type="p"><IDescription type="e">
+				<_text type="a">{\rtf1\ansi\ansicpg936\deff0\deflang1033\deflangfe2052{\fonttbl{\f0\fnil\fcharset0 Arial;}}%0D
+\viewkind4\uc1\pard\lang2052\fs20\par%0D
+}</_text>
+			</IDescription>
+			</_description>
+			<_modifiedTime type="a">12.15.2019::9:20:39</_modifiedTime>
+			<_scopeType type="a">Explicit</_scopeType>
+			<_instrumentation type="a">None</_instrumentation>
+			<_timeModel type="a">RealTime</_timeModel>
+			<m_generateActors type="a">1</m_generateActors>
+			<_statechartImplementation type="a">Flat</_statechartImplementation>
+			<_checksList type="a">0 ,</_checksList>
+			<_checksList_Default type="a">1</_checksList_Default>
+			<ScopeElements type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</ScopeElements>
+			<InitialInstances type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</InitialInstances>
+			<weakCGTime type="a">12.15.2019::9:20:39</weakCGTime>
+			<strongCGTime type="a">12.15.2019::9:20:39</strongCGTime>
+			<AnimScopeElements type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</AnimScopeElements>
+			<m_allInAnimScope type="a">1</m_allInAnimScope>
+			<m_generateUsecases type="a">0</m_generateUsecases>
+			<AggregatesList type="e">
+				<value>GUID cc4ba31d-e9a9-4535-b516-424ce08b4fe9</value>
+				<value>GUID cd84af94-8270-48e5-a24b-1b51869feaa3</value>
+				<value>GUID a6ff43d7-520a-49f5-a1b5-23f205ac01df</value>
+			</AggregatesList>
+		</ICodeGenConfigInfo>
+		<IMHyperLink type="e">
+			<_id type="a">GUID cc4ba31d-e9a9-4535-b516-424ce08b4fe9</_id>
+			<_modifiedTimeWeak type="a">1.2.1990::0:0:0</_modifiedTimeWeak>
+			<_modifiedTime type="a">12.15.2019::9:19:38</_modifiedTime>
+			<_dependsOn type="r">
+				<INObjectHandle type="e">
+				</INObjectHandle>
+			</_dependsOn>
+			<_linkDispName type="a">Edit Makefile</_linkDispName>
+			<_linkType type="a">FREE</_linkType>
+			<_linkTarget type="a">TestComponent.mak</_linkTarget>
+			<isConfigurationFileHyperLink type="a">1</isConfigurationFileHyperLink>
+		</IMHyperLink>
+		<IMHyperLink type="e">
+			<_id type="a">GUID cd84af94-8270-48e5-a24b-1b51869feaa3</_id>
+			<_modifiedTimeWeak type="a">1.2.1990::0:0:0</_modifiedTimeWeak>
+			<_modifiedTime type="a">12.15.2019::9:19:38</_modifiedTime>
+			<_dependsOn type="r">
+				<INObjectHandle type="e">
+				</INObjectHandle>
+			</_dependsOn>
+			<_linkDispName type="a">Edit Main File</_linkDispName>
+			<_linkType type="a">FREE</_linkType>
+			<_linkTarget type="a">MainTestComponent</_linkTarget>
+			<isConfigurationFileHyperLink type="a">1</isConfigurationFileHyperLink>
+		</IMHyperLink>
+		<IFolder type="e">
+			<_id type="a">GUID a6ff43d7-520a-49f5-a1b5-23f205ac01df</_id>
+			<_myState type="a">73728</_myState>
+			<_name type="a">TestConfig</_name>
+			<_modifiedTimeWeak type="a">12.15.2019::9:20:39</_modifiedTimeWeak>
+			<_modifiedTime type="a">12.15.2019::9:20:39</_modifiedTime>
+			<m_path type="a">.</m_path>
+			<Elements type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</Elements>
+			<Files type="c">
+				<IRPYRawContainer type="e">
+					<size type="a">0</size>
+				</IRPYRawContainer>
+			</Files>
+		</IFolder>
+		
+	</RHAPSODY-MODEL>
+	<OslcLinks type="c">
+		<IRPYRawContainer type="e">
+			<size type="a">0</size>
+		</IRPYRawContainer>
+	</OslcLinks>
+
+<INCLUDES-RHAPSODY-INDEX>false</INCLUDES-RHAPSODY-INDEX>
+</RhapsodyArchive>
+
