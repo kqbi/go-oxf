@@ -34,7 +34,8 @@ type OMReactive struct {
 	activeContext                IOxfActive           //## link activeContext
 	_currentEvent                IOxfEvent            //## link currentEvent
 	_mutex                       sync.Mutex           //## link eventGuard
-	Parent interface{}
+	Parent                       interface{}
+	Event                        chan IOxfEvent
 }
 
 //func (r *OMReactive) Init() {
@@ -84,11 +85,11 @@ func (r *OMReactive) handleEvent(ev IOxfEvent) TakeEventStatus {
 			// the event guard is set -
 			// use it to set mutual exclusion between Events and Triggered Operations
 			// the m_eventGuard is set by the application when there is a guarded triggered operation
-			r._mutex.Lock()
+			//r._mutex.Lock()
 			// actually handle the event
 			status = r.processEvent(ev)
 			// unlock the event guard
-			r._mutex.Unlock()
+			//r._mutex.Unlock()
 
 			// result with a status which indicates that the item had reached a terminate connector
 			if r.ShouldTerminate() {
@@ -136,10 +137,10 @@ func (r *OMReactive) SetActiveContext(context IOxfActive) {
 }
 
 func (r *OMReactive) setShouldTerminate(flag bool) {
-	//if (flag) {
-	//state |= terminateConnectorReachedStateMask
-	//} else {
-	//state &= ~terminateConnectorReachedStateMask
+	// if (flag) {
+	// r.state |= terminateConnectorReachedStateMask
+	// } else {
+	// r.state &= ~terminateConnectorReachedStateMask
 }
 
 func (r *OMReactive) shouldDelete() bool {
@@ -150,39 +151,59 @@ func (r *OMReactive) shouldSupportDirectDeletion() bool {
 	return true
 }
 
-func (r *OMReactive) StartBehavior() bool {
-	status := false
-	if r.IsUnderDestruction() {
-		status = false
-	} else {
-		if r.IsBehaviorStarted() == false ||
-			r.RestartBehaviorEnabled() == true {
-			r.SetBehaviorStarted()
-			// take the default transition
-			//r.rootState_entDef()
-			c := reflect.ValueOf(r.Parent)
-			method := c.MethodByName("RootState_entDef")
-			in := make([]reflect.Value, 0)
-			method.Call(in)
+func (r *OMReactive) StartBehavior() {
+	r.SetBehaviorStarted()
+	// take the default transition
+	//r.rootState_entDef()
+	c := reflect.ValueOf(r.Parent)
+	method := c.MethodByName("RootState_entDef")
+	in := make([]reflect.Value, 0)
+	method.Call(in)
+	/*
+		//status := false
+		if r.IsUnderDestruction() {
+			//	status = false
+		} else {
+			if r.IsBehaviorStarted() == false ||
+				r.RestartBehaviorEnabled() == true {
+				r.SetBehaviorStarted()
+				// take the default transition
+				//r.rootState_entDef()
+				c := reflect.ValueOf(r.Parent)
+				method := c.MethodByName("RootState_entDef")
+				in := make([]reflect.Value, 0)
+				method.Call(in)
 
-			// This takes care of transitions without triggering events
-			if r.ShouldCompleteRun() {
-				// generate a dummy event in case the class doesn't receive any external events
-				// this causes the runToCompletion() after the default transition to be taken -
-				// in the class own thread (for active classes)
-				r.SetCompleteStartBehavior(true)
+				// This takes care of transitions without triggering events
+				if r.ShouldCompleteRun() {
+					// generate a dummy event in case the class doesn't receive any external events
+					// this causes the runToCompletion() after the default transition to be taken -
+					// in the class own thread (for active classes)
+					r.SetCompleteStartBehavior(true)
 
-				r.Send(&r.TheStartOrTerminationEvent)
+					r.Send(&r.TheStartOrTerminationEvent)
+				}
+			}
+
+			toTerminate := r.ShouldTerminate()
+			if toTerminate {
+				r.Destroy()
+			}
+			//status = !toTerminate
+		}
+		//return status
+	*/
+	for {
+		select {
+		case ev := <-r.Event:
+			Dispatcher.execute(ev)
+			toTerminate := r.IsUnderDestruction()
+			if toTerminate {
+				return
 			}
 		}
-
-		toTerminate := r.ShouldTerminate()
-		if toTerminate {
-			r.Destroy()
-		}
-		status = !toTerminate
 	}
-	return status
+
 }
 
 func (r *OMReactive) handleNotConsumed(ev IOxfEvent, reason EventNotConsumedReason) {
@@ -353,7 +374,8 @@ func (r *OMReactive) sendEvent(ev IOxfEvent) bool {
 			//		(OMMainDispatcher*)context,
 			//		ev));
 
-			go Dispatcher.execute(ev)
+			//go Dispatcher.execute(ev)
+			r.Event <- ev
 			result = true
 		}
 	}

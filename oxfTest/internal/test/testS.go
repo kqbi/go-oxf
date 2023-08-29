@@ -2,6 +2,7 @@ package test
 
 import (
 	"fmt"
+
 	"github.com/kqbi/go-oxf/oxf"
 )
 
@@ -32,6 +33,7 @@ func (t *TestS) initStatechart() {
 
 func (t *TestS) Init() {
 	//t.omreactive.Init()
+	t.Event = make(chan oxf.IOxfEvent, 1)
 	t.Parent = t
 	t.SetActiveContext(oxf.Dispatcher)
 	t.TheStartOrTerminationEvent.Init()

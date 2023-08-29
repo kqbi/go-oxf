@@ -24,7 +24,7 @@ type IOxfReactive interface {
 	handleEvent(ev IOxfEvent) TakeEventStatus
 	popNullTransition()
 	pushNullTransition()
-	StartBehavior() bool
+	StartBehavior()
 	handleNotConsumed(ev IOxfEvent, reason EventNotConsumedReason)
 	handleTrigger(ev IOxfEvent)
 	ScheduleTimeout(delay int64, targetStateName []byte) IOxfTimeout

@@ -6,11 +6,11 @@ import (
 
 type OMTimeout struct {
 	OMEvent
-	ti *time.Timer
+	ti        *time.Timer
 	canceled  bool
 	delayTime int64
 	dueTime   int64
-//	ch chan int
+	//	ch chan int
 }
 
 func (t *OMTimeout) Init() {

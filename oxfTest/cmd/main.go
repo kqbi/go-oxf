@@ -12,7 +12,7 @@ import (
 func main() {
 	t := new(test.TestS)
 	t.Init()
-	t.StartBehavior()
+	go t.StartBehavior()
 	t.Send(&test.EvPoll{})
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, syscall.SIGHUP, syscall.SIGQUIT, syscall.SIGTERM, syscall.SIGINT)
